@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<!-- <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -26,4 +26,92 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links" %> -->
+
+
+
+
+
+
+<div class="container home-sections d-flex flex-row justify-content-center align-items-center ">
+
+
+  <div class="login-section pt-3">
+
+  <div class="card text-center pt-5 mx-auto" style="width: 23rem;">
+    
+    <%= image_tag 'logo.png', class: "card-img-top" %>
+    
+    <p class="w-75 fs-6 fw-bold text-secondary align-self-center mt-2" >Sign up to see photos and videos from your frindes </p>
+      
+      <a href="#" class="d-block mt-4 text-decoration-none fw-bold bg-primary text-white rounded w-75 align-self-center" >
+        <%= image_tag("facebook.png", class: "facebook") %>
+        Log  in with facebook
+      </a>
+    
+      <div class="d-flex align-items-center mt-4">
+        <div class="line"></div>
+        <h2 class="line-text">OR</h2>
+        <div class="line"></div>
+      </div>
+
+    <div class="card-body" >
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+      <div class="mb-3 mt-4">
+        <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "phone number or email" %>
+      </div>
+
+      <div class="mb-3 mt-4">
+        <%= f.text_field :full_name, autofocus: true,  class: "form-control", placeholder: "full name" %>
+      </div>      
+
+      <div class="mb-3 mt-4">
+        <%= f.text_field :username, autofocus: true, class: "form-control", placeholder: "username" %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.password_field :password, autofocus: true, class: "form-control", placeholder: "password" %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.password_field :password_confirmation, autofocus: true, class: "form-control", placeholder: "password confirmation" %>
+      </div>
+
+      <%= f.submit "Sign up", class: "btn btn-primary w-100" %>
+      
+      <% end %>
+
+      <div class="d-flex align-items-center mt-4">
+        <div class="line"></div>
+        <h2 class="line-text">OR</h2>
+        <div class="line"></div>
+      </div>
+
+      <a href="#" class="d-block mt-4 text-decoration-none fw-bold" >
+        <%= image_tag("facebook.png", class: "facebook") %>
+        Log  in with facebook
+      </a>
+
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% elsif alert%>
+      <p class="alert"><%= alert %></p>
+      <% end %>
+
+      
+
+    </div>
+  </div>
+
+  <div class="card text-center py-2 mt-3 mx-auto" style="width: 23rem;" >
+    <div class="card-text">
+       have an account?
+      <%= link_to 'Sign in', new_user_session_path, class: "fs-6 my-4 text-decoration-none text_info" %>
+    </div>
+  </div>
+
+  </div>
+</div>
+

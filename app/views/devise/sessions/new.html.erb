@@ -1,7 +1,4 @@
 
-<%= render "devise/shared/links" %>
-
-
 
 <div class="container home-sections d-flex flex-row justify-content-center align-items-center ">
   <div class="images-section pt-3 d-none d-lg-block">
@@ -47,10 +44,10 @@
     </div>
   </div>
 
-  <div class="card text-center py-2 mt-3" style="width: 23rem;" >
+  <div class="card text-center py-2 mt-3 " style="width: 23rem;" >
     <div class="card-text">
       Don't have an account?
-      <a href="#" class="fs-6 my-4 text-decoration-none" >Sign up</a>
+      <%= link_to 'Sign up', new_user_registration_path, class: "fs-6 my-4 text-decoration-none text_info" %>
     </div>
   </div>
 
