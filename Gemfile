@@ -50,6 +50,8 @@ gem "bootsnap", require: false
 
 gem 'bootstrap', '~> 5.2.0'
 gem 'devise'
+gem "font-awesome-sass", "~> 6.4.0"
+
 
 
 
