@@ -24,12 +24,14 @@
         <%= link_to new_post_path, class: "text-dark" do %> <i class="fa-regular fa-square-plus fa-xl"></i> <% end %>
         <i class="fa-regular fa-compass fa-xl"></i> 
         <i class="fa-sharp fa-regular fa-heart fa-xl"></i> 
+        
+        <!-- user_image -->
         <div>  
           <% if current_user && current_user.profile_pic.attached? %>
-            <%= image_tag  current_user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 10%" %>
+            <%= image_tag  current_user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 15%" %>
 
           <% else %>
-            <%= image_tag  'user-pp.png', class: "img-thumbnail rounded-circle", style: "width: 10%" %>
+            <%= image_tag  'user-pp.png', class: "img-thumbnail rounded-circle", style: "width: 15%" %>
           <% end %>  
         </div>
       </div>
