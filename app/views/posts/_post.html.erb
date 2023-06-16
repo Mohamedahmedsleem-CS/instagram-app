@@ -1,4 +1,4 @@
-<div id="<%= dom_id post %>">
+<div class="my-3" id="<%= dom_id post %>">
 
 
   <div class="card  " style="width: 25rem;">
@@ -62,6 +62,7 @@
       <p class="card-text"><span class="fw-bold" ><%= post.user.username %></span> <%= post.caption %></p>
       <small class="text-muted" ><%= time_ago_in_words(post.created_at)  %> ago</small>
     </div>
+
 
     <div class="card-footer">
       <input type="text" class="w-75" placeholder=" Add a comment..." style="border:none" >
