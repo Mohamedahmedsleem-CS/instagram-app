@@ -11,6 +11,7 @@ module Instagram
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+# config.action_dispatch.allow_iframe_embeds = false
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
