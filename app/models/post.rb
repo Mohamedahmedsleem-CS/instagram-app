@@ -7,5 +7,7 @@ class Post < ApplicationRecord
 
   has_many :likes
   has_many :likers, through: :likes, source: :user
+  # the post has many likers through the likes model and give the user ID from the source of user model
+  # (the  user which is inside the like model )
 
 end
