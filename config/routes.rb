@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     root "home#index"
     post "toggle_like", to:  "likes#toggle_like", as: :toggle_like
 
+    
+  resources :comments, only: [:create, :destroy]
+
   # root :to => "devise/sessions#new"
 #   devise_scope :user do
 #   authenticated :user do
