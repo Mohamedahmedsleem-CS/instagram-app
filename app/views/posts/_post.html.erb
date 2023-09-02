@@ -60,14 +60,29 @@
 
       <%= render "posts/post_actions", post: post %>
       <p class="card-text"><span class="fw-bold" ><%= post.user.username %></span> <%= post.caption %></p>
+
+      <%= render "posts/post_comments", post: post %>
+
       <small class="text-muted" ><%= time_ago_in_words(post.created_at)  %> ago</small>
     </div>
 
-
-    <div class="card-footer">
-      <input type="text" class="w-75" placeholder=" Add a comment..." style="border:none" >
-      <a class="text-primary fw-bold" style="text-decoration:none" >Post</a>
-    </div>
+    <!-- 
+      # to use turbo stream we need to:
+      # 1 - specify the controller, which is comments controller and th action it will run.
+      # 2 - we will run our action just to win 
+      #         we have turbo ( wh_en we submit and this submission is just e_nd, so we make sure to clear the form just 
+      #         after we successffully create the comment and or before that and
+      #          we will face that we empty the form before we submit it , 
+      #          and it will submit an empty comment so we can use turbo submit-e_nd action )
+      #          and wh_en that happens, lets call our comment controller and it is here action which we created  
+    -->
+    <%= form_with url: comments_path, method: :post, data: {controller:"comments", action: "turbo:submit-end->comments#clear" } do |f| %>
+      <div class="card-footer d-flix justify-content-between bg-white ">
+        <%= f.hidden_field :post_id, value: post.id %>
+        <%= f.text_area :comment_body, class: "w-75", placeholder:" Add a comment...", style:"border:none"%>  
+        <%= f.submit "Post", class: "text-primary fw-bold", style:"background:none; border:none "%> 
+      </div>
+    <% end %>
 
   </div>
 </div>
