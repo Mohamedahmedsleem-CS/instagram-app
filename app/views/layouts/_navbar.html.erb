@@ -33,6 +33,7 @@
         <i class="fa-sharp fa-regular fa-heart fa-xl"></i> 
 
       <!-- dropdown -->
+      <!-- user_image -->
       <div class="dropdown">
         <a class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <% if current_user && current_user.profile_pic.attached? %>
@@ -47,15 +48,7 @@
         </ul>
       </div> 
         
-        <!-- user_image -->
-        <div>  
-          <% if current_user && current_user.profile_pic.attached? %>
-            <%= image_tag  current_user.profile_pic, class: "img-thumbnail rounded-circle", style: "width: 15%" %>
 
-          <% else %>
-            <%= image_tag  'user-pp.png', class: "img-thumbnail rounded-circle", style: "width: 15%" %>
-          <% end %>  
-        </div>
 
         
 
